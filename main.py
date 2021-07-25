@@ -1,6 +1,4 @@
-shift = 3
-
-text = input("Welcome to the first release of Pysoteric! Enter a string of text to be encrypted \n")
+text = input("Welcome to the second release of Pysoteric! Enter a string of text to be encrypted \n")
 
 encryption = ""
 
@@ -11,43 +9,31 @@ ciphermethod = input("Now enter a cipher method to be used. 3 for caesar based(w
 
 for c in text:
     if c and ciphermethod == '3':
+        shift = 3
+        # gets unicode value of the current character of input
         c_unicode = ord(c)
-        c_index = ord(c) - ord("A")
-
-        new_index = (c_index + shift) % 52
-
-        new_unicode = new_index + ord("A")
-        new_character = chr(new_unicode)
-
-        encryption = encryption + new_character
+        # appends the shift to the character index
+        c_unicode = (c_unicode + shift)
+        # encryption variable stores the now encrypted text
+        encryption += chr(c_unicode)
 
     elif c and ciphermethod == '4':
         shift = 4
+        # gets unicode value of the current character of input
         c_unicode = ord(c)
-
-        c_index = ord(c) - ord("A")
-
-        new_index = (c_index + shift) % 52
-
-        new_unicode = new_index + ord("A")
-
-        new_character = chr(new_unicode)
-
-        encryption = encryption + new_character
+        # appends the shift to the character index
+        c_unicode = (c_unicode + shift)
+        # encryption variable stores the now encrypted text
+        encryption += chr(c_unicode)
 
     elif c and ciphermethod == '6':
-        shift = 666
+        shift = 6
+        # gets unicode value of the current character of input
         c_unicode = ord(c)
-
-        c_index = ord(c) - ord("A")
-
-        new_index = (c_index + shift) % 52
-
-        new_unicode = new_index + ord("A")
-
-        new_character = chr(new_unicode)
-
-        encryption = encryption + new_character
+        # appends the shift to the character index
+        c_unicode = (c_unicode + shift)
+        # encryption variable stores the now encrypted text
+        encryption += chr(c_unicode)
 
     else:
         encryption += c
@@ -55,9 +41,8 @@ for c in text:
         break
 
 if invalid != 1:
-    print("Cipher chosen:", ciphermethod )
+    print("Cipher chosen:", ciphermethod)
 
     print("User text:", text)
 
     print("Encrypted text:", encryption)
-
