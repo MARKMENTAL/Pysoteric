@@ -36,7 +36,6 @@ for c in text:
         encryption += chr(c_unicode)
 
     else:
-        encryption += c
         invalid = 1
         break
 
